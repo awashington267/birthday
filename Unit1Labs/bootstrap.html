@@ -1,0 +1,205 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width">
+    <!--bootstrap stylesheet-->
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/jquery-ui.css" rel="stylesheet" />
+    <link href="Content/animate.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <title></title>
+    <style>
+        body, h1 {
+            font-family: 'Raleway', sans-serif;
+        }
+    
+        .myactionlink:hover {
+            color: green;
+        }
+
+        .myactionlink {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <!--navbar-->
+    <div class="collapse navbar-collapse" id="collapse-menu">
+        <nav class="navbar navbar-default navbar-static-top">
+            <div class="container">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active"><a href="#"><i class="glyphicon glyphicon-home"></i> Home</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Links<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="http://www.asp.net">ASP.NET</a></li>
+                            <li><a href="http://www.w3schools.com">W3Schools</a></li>
+                            <li><a href="http://stackoverflo.com">Stack Overflow</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+                <div class="navbar-header">
+                    <a href="#" class="navbar-brand">MVC Source</a>
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapse-menu">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <a href="#" class="navbar-brand">MVC Man  </a>
+            </div>
+        </nav>
+    </div>
+    
+    <div class="container">
+        <div class="jumbotron" style="border: 2px solid #808080">
+            <h1 style="text-shadow: 2px 3px 2px #808080; color:blue">WCTC MVC .Net</h1>
+            <p>This is the .Net MVC Course at WCTC</p>
+            <button class="btn btn-default">Start Here</button>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-sm-6">
+                <h3><a href="#">Valentines Day</a></h3>
+                <p>Start your valentines day off now with a 20% off and free delivery for someone you care about!</p>
+                <!-- My attempt at a discount code-->
+
+
+                <a href="#" class="myactionlink" data-toggle="tooltip" data-placement="bottom" title="1515" onmouseover=""
+                   style="cursor: pointer; text-decoration: none;">Discount Code</a>
+                <!--<button type="button" class="btn btn-default">Learn More</button>-->
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <h3><a href="#">Happy Birthday</a></h3>
+                <p>Show someone a great birthday celebration with this package!</p>
+                <a href="#" class="myactionlink" data-toggle="tooltip" data-placement="bottom" title="3650" onmouseover=""
+                   style="cursor: pointer; text-decoration: none">Discount Code</a>
+                <!--<button type="button" class="btn btn-default">Learn More</button>-->
+            </div>
+            <div class="col-sm-4 col-sm-6">
+                <h3><a href="#">Half Price</a></h3>
+                <p>For any occassion come by and show them that you care! Get it for 50% off!</p>
+                <a href="#" class="myactionlink" data-toggle="tooltip" data-placement="bottom" title="7521" onmouseover=""
+                   style="cursor: pointer; text-decoration: none">Discount Code</a>
+                <!--<button type="button" class="btn btn-default">Learn More</button>-->
+            </div>
+        </div>
+
+    </div>
+    <div class="container">
+        <h1>Happy Birthday</h1>
+        <form role="form">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input id="name" type="text" class="form-control" placeholder="Enter Name" />
+                    </div>
+                    <div class="form-group">
+                        <label for="birthday">Birthday</label>
+                        <input id="birthday" type="text" class="form-control" placeholder="Enter Birthday" />
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">
+                                <strong>Select your favorite</strong>
+                            </h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="checkbox">
+                                <label for="Green">
+                                    <input class="bx" id="gb" name="Green" type="checkbox" value="true" />
+                                    <input name="Green" type="hidden" value="false" />
+                                    Green balloons
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label for="Orange">
+                                    <input class="bx" id="ob" name="Orange" type="checkbox" value="true" />
+                                    <input name="Orange" type="hidden" value="false" />
+                                    Orange balloons
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label for="Purple">
+                                    <input class="bx" id="pb" name="Purple" type="checkbox" value="true" />
+                                    <input name="Purple" type="hidden" value="false" />
+                                    Purple balloons
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label for="Blue">
+                                    <input class="bx" id="bb" name="Blue" type="checkbox" value="true" />
+                                    <input name="Blue" type="hidden" value="false" />
+                                    Blue balloons
+                                </label>
+                            </div>
+                            <button type="button" class="btn btn-default">Submit</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <img src="images/green.png" id="gbImg" class="ball" onmouseover="" style="cursor: grab" />
+                    <img src="images/orange.png" id="obImg" class="ball" onmouseover="" style="cursor: grab" />
+                    <img src="images/purple.png" id="pbImg" class="ball" onmouseover="" style="cursor: grab" />
+                    <img src="images/blue.png" id="bbImg" class="ball" onmouseover="" style="cursor: grab" />
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+    <!--jquery and bootstrap frameworks-->
+
+    <script src="Scripts/jquery-3.3.1.min.js"></script>
+    <script src="Scripts/jquery-ui.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+
+    <script>
+        /*$(document).ready(function(){
+
+        });
+        */
+
+        /*is the same as $(document).ready */
+        $(function () {
+
+            $('#birthday').datepicker({ dateFormat: 'mmdd' });
+            //class selectors must start with a .
+            $('.ball').draggable();
+            $('h1').addClass('animated flash');
+            //.each is an iteration like a for loop
+            $('.bx').each(function (idx) {
+                $(this).is(':checked') ?
+                $('#' + (this).attr('id') + 'Img').css('visibility', 'visible'):
+                $('#' + (this).attr('id') + 'Img').css('visibility', 'hidden')
+            });
+            
+            $('.bx').change(function (e) {
+                $('.bx').each(function () {
+                    $(this).is(':checked') ?
+                    $('#' + $(this).attr('id') + 'Img').removeClass().addClass('animated bounceInDown') /*.css('visibility', 'visible')*/
+                    :
+                    $('#' + $(this).attr('id') + 'Img').addClass('animated bounceOutUp') /*.css('visibility', 'hidden')*/
+                    /*true : false*/
+                });
+            });
+        });
+    </script>
+
+    <nav class="navbar navbar-inverse navbar-fixed-bottom">
+        <div class="container">
+            <p class="navbar-text"><i>&copy; 2016 Your Name</i></p>
+            <button type="button" class="btn btn-default navbar-btn pull-right">
+                Sign in
+            </button>
+        </div>
+    </nav>
+</body>
+
+</html>

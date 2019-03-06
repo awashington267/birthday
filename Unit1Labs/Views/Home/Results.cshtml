@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "Results";
+}
+
+<h2>Results</h2>
+
+Thank you, @ViewBag.name
+Your order was placed on @ViewBag.date  
+for @ViewBag.balloons
+for @ViewBag.birthday.
+
+<hr />Your order will includ:
+<ul>
+    @{ 
+        foreach (var balloon in ViewBag.list)
+        {
+            <li style="color:@balloon">@balloon balloons</li>
+        }
+    }
+</ul>
