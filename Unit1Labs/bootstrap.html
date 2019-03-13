@@ -175,12 +175,14 @@
             $('h1').addClass('animated flash');
             //.each is an iteration like a for loop
             $('.bx').each(function (idx) {
+                alert('test');
                 $(this).is(':checked') ?
                 $('#' + (this).attr('id') + 'Img').css('visibility', 'visible'):
                 $('#' + (this).attr('id') + 'Img').css('visibility', 'hidden')
             });
             
             $('.bx').change(function (e) {
+                alert('test2');-
                 $('.bx').each(function () {
                     $(this).is(':checked') ?
                     $('#' + $(this).attr('id') + 'Img').removeClass().addClass('animated bounceInDown') /*.css('visibility', 'visible')*/

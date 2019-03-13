@@ -59,18 +59,22 @@ namespace Unit1Labs.Controllers
                 list.Add(balloon);
 
             }
-            return View("Results");
+            return View();
         }
+
         [HttpPost]
         public ActionResult ProcessOrder(FormCollection form)
         {
             List<Order> orders = new List<Order>();
             foreach (Products p in Products)
             {
-                int qty = Convert.ToInt32(form[p.Id]);
-                if(qty > 0)
+                Int32 qty;
+                if(Int32.TryParse(form[p.Id], out qty))
                 {
-                    orders.Add(new Order { Prod = p, Qty = qty });
+                    if (qty > 0)
+                    {
+                        orders.Add(new Order { Prod = p, Qty = qty });
+                    }
                 }
                 
             }

@@ -1,93 +1,85 @@
-﻿@model IEnumerable<Unit1Labs.Models.Products>
+﻿@using Unit1Labs.Models;
+@model IEnumerable<Unit1Labs.Models.Products>
 
 @{
     ViewBag.Title = "DisplayProducts";
+    double price = 0.0;
+    int qty = ViewBag.number == null ? 0 : ViewBag.number;
+    double total = price * qty;
+    double fullCost = total + total;
 }
 
 <h2>DisplayProducts</h2>
 
-    <form method="post" action="@Url.Action("ProcessOrder", "Home")">
-        <table class="table table-bordered table-striped">
-            <thread>
-                <tr>
-                    <th>Name</th>
-                    <th>Price</th>
-                    <th>Quantity</th>
-                    <th>Total ($)</th>
-                </tr>
-            </thread>
-            <tbody>
-                @foreach (var p in Model)
-                {
-                    <tr>
-                        <td>@p.Name</td>
-                        <td id="price _@p.Id">@p.Price</td>
-                        <td><input class="form-control qty" type="number" name="@p.Id" id="@p.Id" value="0" /></td>
-                        <td id="total_@p.Id">0.00</td>
-
-                    </tr>
-                }
-            </tbody>
-            <tfoot>
-                <tr>
-                    <th colspan="3">Total</th>
-                    <th id="total">0.00</th>
-                </tr>
-            </tfoot>
-        </table>
-        <button type="submit" class="btn btn-default">Submit Order</button>
-    </form>
-    @section scripts
-{
-        <script>
-            $(function () {
-                //alert("test");
-                $('.qty').change(function () {
-                    //alert(this.id);
-                    var qty = $('#' + this.id).val();
-                    var price = $('price_' + this.id).text();
-                    //alert(price);
-                    $('#total_' + this.id).text((qty * price).toFixed(2));
-
-                    var total = 0;
-                    $('.qty').each(function () {
-                        debugger;
-                        total += $('#total_' + this.id).text();
-                    })
-                });
-                $('#total').html();
-            });
-        </script>
-    }
-    <p>
-        @Html.ActionLink("Create New", "Create")
-    </p>
-    <table class="table">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Price)
-            </th>
-            <th></th>
-        </tr>
-
-        @foreach (var item in Model)
-        {
+<form method="post" action="@Url.Action("ProcessOrder", "Home")">
+    <table class="table table-bordered table-striped">
+        <thread>
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Name)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Price)
-                </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-                </td>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total ($)</th>
             </tr>
-        }
+        </thread>
+        <tbody>
+            @foreach (Products p in Model)
+            {
+                <tr>
+                    <td>@p.Name</td>
+                    <td id="price_@p.Id">@p.Price</td>
+                    <td><input class="form-control qty" type="number" name="@p.Id" id="@p.Id" value="0" /></td>
+                    <td id="total_@p.Id">0.00</td>
 
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <th colspan="3">Total</th>
+                <th id="total">0.00</th>
+            </tr>
+        </tfoot>
     </table>
+    <button type="submit" class="btn btn-default">Submit Order</button>
+</form>
+@section scripts
+{
+    <script>
+        $(function () {
+            //alert("test");
+            $('.qty').change(function (e) {
+                //alert(this.id);
+                var qty = $('#' + this.id).val();
+                //alert(qty);
+                var price = $('#price_' + this.id).html();
+                //alert(price);
+                $('#total_' + this.id).html((qty * price).toFixed(2));
+                
+                var total = 0;
+                $('.qty').each(function (e) {
+                    //debugger;
+                    total += Number($('#total_' + this.id).html());
+                    //alert(total);
+                });
+                $('#total').html(total.toFixed(2));
+            });
+            @*$('#total').html(total.toFixed(2));*@
+            
+            
+        });
+    </script>
+}
+<form role="form">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input id="name" type="text" class="form-control" placeholder="Enter Name" required="required" />
+            </div>
+            <div class="form-group">
+                <label for="Address">Address</label>
+                <input id="address" type="text" class="form-control" placeholder="Enter Address" required="required" />
+            </div>
+        </div>
+    </div>
+</form>

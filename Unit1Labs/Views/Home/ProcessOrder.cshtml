@@ -1,4 +1,4 @@
-﻿
+﻿@using Unit1Labs.Models;
 @{
     ViewBag.Title = "ProcessOrder";
 }
@@ -7,13 +7,18 @@
 <ul>
     @{
         double total = 0.0;
-        foreach (var o in ViewBag.Orders)
+        foreach (Order o in ViewBag.Orders)
         {
+            total += o.Qty * o.Prod.Price;
             <li>
                 @String.Format("{0} {1}", o.Qty, o.Prod.Name)
             </li>
         }
     }
-
 </ul>
 
+<h3>Order Total: @total.ToString("C")</h3>
+
+<p>
+    @Html.ActionLink("Order More", "DisplayProducts")
+</p>

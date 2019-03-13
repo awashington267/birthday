@@ -18,6 +18,10 @@ namespace Unit1Labs
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+            routes.MapRoute(
+                name: "Birthday",
+                url: "{controller}/{action}/{id}"
+                );
         }
     }
 }
