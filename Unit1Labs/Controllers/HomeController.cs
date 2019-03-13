@@ -79,6 +79,7 @@ namespace Unit1Labs.Controllers
                 
             }
             ViewBag.Orders = orders;
+            ViewBag.name = form["name"];
             return View();
         }
 

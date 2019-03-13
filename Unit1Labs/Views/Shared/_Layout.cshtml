@@ -6,6 +6,20 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" />
+    <style>
+        body, li {
+            font-family: 'Raleway', sans-serif;
+        }
+
+        .myactionlink:hover {
+            color: green;
+        }
+
+        .myactionlink {
+            color: blue;
+        }
+    </style>
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -17,7 +31,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <link rel="icon" type="image/x-icon" href="~/favicon.ico" />
-                <a href="~/Home/Index" class="navbar-brand">Home</a>
+                <a href="~/Home/Index" class="navbar-brand" style="color:blue">Home</a>
                 @* @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
             </div>
             <div class="navbar-collapse collapse">
